@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: argo-root-app
+  name: {{ .Chart.Name }}
 spec:
   generators:
     - list:
@@ -13,12 +13,11 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/CaveHosting/Infrastructure.git
-        targetRevision: HEAD
-        path: 'charts/{{ `{{name}}`}}'
+        repoURL: {{ .Values.source.repoURL }}
+        targetRevision: {{ .Values.source.targetRevision }}
+        path: '{{ .Values.source.basePath }}/{{ `{{name}}`}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{ `{{name}}`}}'
       syncPolicy:
         automated:
           prune: true

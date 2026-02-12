@@ -1,0 +1,4 @@
+source:
+  repoURL: https://github.com/CaveHosting/Infrastructure.git
+  targetRevision: HEAD
+  basePath: charts
