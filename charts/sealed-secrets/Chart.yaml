@@ -1,11 +1,7 @@
 apiVersion: v2
-name: argocd-apps
-description: A Helm chart for Kubernetes
-type: application
+name: sealed-secrets
 version: 0.1.0
-appVersion: "1.0.0"
-
 dependencies:
-  - name: argo-cd
-    version: 9.4.1
-    repository: https://argoproj.github.io/argo-helm
+  - name: sealed-secrets
+    version: 2.15.0
+    repository: https://charts.bitnami.com/bitnami
