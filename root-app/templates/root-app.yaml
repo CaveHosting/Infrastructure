@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argo-root-app
+spec:
+  generators:
+    - list:
+        elements:
+          - name: sealed-secrets
+  template:
+    metadata:
+      name: '{{ `{{name}}`}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/CaveHosting/Infrastructure.git
+        targetRevision: HEAD
+        path: 'charts/{{ `{{name}}`}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{ `{{name}}`}}'
