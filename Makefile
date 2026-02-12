@@ -3,8 +3,7 @@ reset:
 	k3d cluster create --config k3d/dev-env.yaml
 
 setup:
-	kubectl create namespace argocd
-	helm install argocd argo/argo-cd --namespace argocd
+	helm install argocd argo/argo-cd --namespace argocd --create-namespace
 
 prod:
-	kubectl apply -f root-apps/root-prod.yaml
+	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait
