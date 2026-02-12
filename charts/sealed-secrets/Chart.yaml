@@ -3,5 +3,5 @@ name: sealed-secrets
 version: 0.1.0
 dependencies:
   - name: sealed-secrets
-    version: 2.15.0
+    version: 2.5.19
     repository: https://charts.bitnami.com/bitnami

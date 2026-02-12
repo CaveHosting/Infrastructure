@@ -1,6 +1,6 @@
 dependencies:
-- name: argo-cd
-  repository: https://argoproj.github.io/argo-helm
-  version: 9.4.1
-digest: sha256:6686031538b67a4b79a89b90de06199758c4718a9b7e0a0e6863a5be8964ed9d
-generated: "2026-02-11T08:53:37.053608545+01:00"
+- name: sealed-secrets
+  repository: https://charts.bitnami.com/bitnami
+  version: 2.5.19
+digest: sha256:c3ba48a0561abd56700b2bd27fe28599c05d4f9fd74df29c85801fb95274569d
+generated: "2026-02-12T13:50:05.407497173+01:00"
