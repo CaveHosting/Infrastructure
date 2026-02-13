@@ -7,3 +7,6 @@ setup:
 
 prod:
 	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait
+
+dev:
+	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait -f root-app/values-dev.yaml
