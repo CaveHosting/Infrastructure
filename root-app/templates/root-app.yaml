@@ -7,7 +7,9 @@ spec:
     - list:
         elements:
           - name: sealed-secrets
+            namespace: kube-system
           - name: api-gateway
+            namespace: default
   template:
     metadata:
       name: '{{ `{{name}}`}}'
@@ -19,6 +21,7 @@ spec:
         path: '{{ .Values.source.basePath }}/{{ `{{name}}`}}'
       destination:
         server: https://kubernetes.default.svc
+        namespace: '{{ `{{namespace}}` }}'
       syncPolicy:
         automated:
           prune: true
