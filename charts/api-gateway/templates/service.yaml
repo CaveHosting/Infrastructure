@@ -4,7 +4,7 @@ metadata:
   name: api-gateway-service
 spec:
   selector:
-    name: api-gateway
+    app: api-gateway
   ports:
     - protocol: TCP
       port: {{ .Values.port }}
