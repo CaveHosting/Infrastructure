@@ -1,5 +1,5 @@
 replicasCount: 1
 container:
   image: timotheeren/cavehosting-api-gateway
-  tag: sha-351241cc2cc7017263bbdf10e298d9f1f9ff2415sha-9e5ed483ba42bd9fce81f6a39cb2e537014a2ebblatest
+  tag: sha-cc076a43e0043cb945173ab51d7788e500d2a9f3
   port: 8080
