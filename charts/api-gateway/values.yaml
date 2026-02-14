@@ -1,0 +1,5 @@
+replicasCount: 1
+container:
+  image: timotheeren/cavehosting-api-gateway
+  tag: latest
+  port: 8080

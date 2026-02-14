@@ -5,7 +5,7 @@ metadata:
   labels:
     app: api-gateway
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicasCount }}
   selector:
     matchLabels:
       app: api-gateway
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: api-gateway
-          image: timotheeren/cavehosting-api-gateway:latest
+          image: '{{ .Values.container.image }}/{{ .Values.container.tag }}'
           ports:
-            - containerPort: 8080
+            - containerPort: {{ .Values.container.port }}
