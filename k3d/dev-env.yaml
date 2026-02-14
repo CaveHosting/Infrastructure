@@ -5,3 +5,14 @@ metadata:
 image: rancher/k3s:v1.31.4-k3s1
 servers: 1
 agents: 2
+options:
+  k3s:
+    extraArgs:
+      - arg: --disable=traefik
+        nodeFilters: [server:*]
+      - arg: --disable=servicelb
+        nodeFilters: [server:*]
+      - arg: --disable=local-storage
+        nodeFilters: [server:*]
+      - arg: --disable=metrics-server
+        nodeFilters: [server:*]
