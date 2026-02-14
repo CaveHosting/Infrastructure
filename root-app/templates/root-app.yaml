@@ -10,6 +10,8 @@ spec:
             namespace: kube-system
           - name: api-gateway
             namespace: default
+          - name: nginx-ingress
+            namespace: nginx-ingress
   template:
     metadata:
       name: '{{ `{{name}}`}}'
