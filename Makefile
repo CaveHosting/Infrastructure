@@ -6,7 +6,8 @@ setup:
 	helm install argocd argo/argo-cd --namespace argocd --create-namespace
 
 prod:
-	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait
+	git clone https://github.com/CaveHosting/Infrastructure.git
+	helm upgrade --install argocd-root Infrastructure/root-app/ --namespace argocd --create-namespace --wait
 
 dev:
 	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait -f root-app/values-dev.yaml
