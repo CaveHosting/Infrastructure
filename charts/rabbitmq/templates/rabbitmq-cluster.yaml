@@ -1,0 +1,11 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: rabbitmq
+  namespace: rabbitmq
+spec:
+  replicas: {{ .Values.replicaCount }}
+  service:
+    type: ClusterIP
+  persistence:
+    storage: {{ .Values.storage }}

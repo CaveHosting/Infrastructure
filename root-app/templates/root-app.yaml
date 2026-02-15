@@ -12,6 +12,8 @@ spec:
             namespace: default
           - name: nginx-ingress
             namespace: nginx-ingress
+          - name: rabbitmq
+            namespace: rabbitmq
   template:
     metadata:
       name: '{{ `{{name}}`}}'
