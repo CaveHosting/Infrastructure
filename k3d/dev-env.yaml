@@ -12,7 +12,5 @@ options:
         nodeFilters: [server:*]
       - arg: --disable=servicelb
         nodeFilters: [server:*]
-      - arg: --disable=local-storage
-        nodeFilters: [server:*]
       - arg: --disable=metrics-server
         nodeFilters: [server:*]
