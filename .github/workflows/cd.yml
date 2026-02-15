@@ -1,0 +1,43 @@
+name: CD
+
+permissions:
+  contents: write
+
+on:
+  workflow_call:
+    inputs:
+      chart:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string
+    secrets:
+      PAT:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Infrastructure repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: 'CaveHosting/Infrastructure'
+          ref: 'dev'
+          token: ${{ secrets.PAT }}
+          persist-credentials: true
+
+      - name: Update Helm Chart
+        run: |
+          TAG="sha-${{ github.event.workflow_run.head_sha }}"
+          sed -i "s|tag: .*|tag: $TAG|g" charts/${{ inputs.chart }}/values.yaml
+
+      - name: Commit and Push
+        run: |
+          git config user.name "Github Actions"
+          git config user.email "actions@github.com"
+          
+          git add charts/${{ inputs.chart }}/values.yaml
+          git commit -m "🚀 (CD) Update image to ${{ inputs.tag }}"
+          git push -u origin dev
