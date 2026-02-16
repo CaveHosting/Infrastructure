@@ -13,7 +13,7 @@ spec:
             namespace: nginx-ingress
             wave: "1"
           - name: rabbitmq
-            namespace: rabbitmq
+            namespace: default
             wave: "5"
           - name: api-gateway
             namespace: default

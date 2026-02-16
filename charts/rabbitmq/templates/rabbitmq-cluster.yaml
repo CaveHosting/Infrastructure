@@ -2,11 +2,9 @@ apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:
   name: rabbitmq
-  namespace: rabbitmq
+  namespace: default
 spec:
   replicas: {{ .Values.replicaCount }}
-  defaultUser:
-    secretName: rabbitmq-custom-user
   service:
     type: ClusterIP
   persistence:
