@@ -8,17 +8,24 @@ spec:
         elements:
           - name: sealed-secrets
             namespace: kube-system
+            wave: "1"
           - name: nginx-ingress
             namespace: nginx-ingress
+            wave: "1"
           - name: rabbitmq
             namespace: rabbitmq
+            wave: "5"
           - name: api-gateway
             namespace: default
+            wave: "10"
           - name: users
             namespace: default
+            wave: "10"
   template:
     metadata:
       name: '{{ `{{name}}`}}'
+      annotations:
+        argocd.argoproj.io/sync-wave: '{{ `{{wave}}` }}'
     spec:
       project: default
       source:
