@@ -11,3 +11,6 @@ prod:
 
 dev:
 	helm upgrade --install argocd-root root-app/ --namespace argocd --create-namespace --wait -f root-app/values-dev.yaml
+
+encrypt:
+	kubeseal --format=yaml < ../_secrets/$(chart).yaml > charts/$(chart)/templates/secret.yaml --controller-name sealed-secrets
