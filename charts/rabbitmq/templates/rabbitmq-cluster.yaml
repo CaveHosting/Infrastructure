@@ -5,6 +5,8 @@ metadata:
   namespace: rabbitmq
 spec:
   replicas: {{ .Values.replicaCount }}
+  defaultUser:
+    secretName: rabbitmq-custom-user
   service:
     type: ClusterIP
   persistence:
