@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: users-config
+data:
+  HOST: rabbitmq.rabbitmq.svc.cluster.local
+  PORT: 5672
