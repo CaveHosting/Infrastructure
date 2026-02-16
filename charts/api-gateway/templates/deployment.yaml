@@ -19,15 +19,10 @@ spec:
           image: '{{ .Values.container.image }}:{{ .Values.container.tag }}'
           ports:
             - containerPort: {{ .Values.container.port }}
+          envFrom:
+            - configMapRef:
+              name: users-config
           env:
-            - name: HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: host
-            - name: PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: port
             - name: RABBIT_USERNAME
               valueFrom:
                 secretKeyRef:
