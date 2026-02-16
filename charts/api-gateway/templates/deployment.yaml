@@ -21,7 +21,7 @@ spec:
             - containerPort: {{ .Values.container.port }}
           envFrom:
             - configMapRef:
-              name: users-config
+                name: users-config
           env:
             - name: RABBIT_USERNAME
               valueFrom:
