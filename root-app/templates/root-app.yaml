@@ -8,12 +8,14 @@ spec:
         elements:
           - name: sealed-secrets
             namespace: kube-system
-          - name: api-gateway
-            namespace: default
           - name: nginx-ingress
             namespace: nginx-ingress
           - name: rabbitmq
             namespace: rabbitmq
+          - name: api-gateway
+            namespace: default
+          - name: users
+            namespace: default
   template:
     metadata:
       name: '{{ `{{name}}`}}'
