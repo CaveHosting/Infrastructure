@@ -9,7 +9,3 @@ spec:
     type: ClusterIP
   persistence:
     storage: {{ .Values.storage }}
-  override:
-    secret:
-      metadata:
-        name: rabbitmq-admin-credentials
