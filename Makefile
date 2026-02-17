@@ -3,7 +3,6 @@ reset:
 	k3d cluster create --config k3d/dev-env.yaml
 
 setup:
-	# kubectl apply -f ../_secrets/master-key.yaml
 	helm install argocd argo/argo-cd --namespace argocd --create-namespace
 
 prod:

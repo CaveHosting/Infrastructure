@@ -4,5 +4,5 @@ metadata:
   name: users-config
   namespace: default
 data:
-  HOST: "rabbitmq.svc.cluster.local"
+  HOST: "rabbitmq.default.svc.cluster.local"
   PORT: "5672"

@@ -19,10 +19,17 @@ spec:
           image: '{{ .Values.container.image }}:{{ .Values.container.tag }}'
           ports:
             - containerPort: {{ .Values.container.port }}
-          envFrom:
-            - configMapRef:
-                name: users-config
           env:
+            - name: RABBIT_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-default-user
+                  key: host
+            - name: RABBIT_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq-default-user
+                  key: port
             - name: RABBIT_USERNAME
               valueFrom:
                 secretKeyRef:
