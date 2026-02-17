@@ -23,12 +23,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Test and Build
+      - name: Install Java
         uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
         with:
           java-version: '21'
           distribution: 'temurin'
-          architecture: x64
+          cache: 'maven'
+      
+      - name: Test and Build
+        run: mvn clean package
 
       - name: Docker Metadata
         id: meta
