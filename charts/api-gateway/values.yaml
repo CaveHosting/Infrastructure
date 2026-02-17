@@ -1,6 +1,6 @@
 replicasCount: 1
 container:
   image: timotheeren/api-gateway
-  tag: sha-5d469b748f0098d5f6de2792cbebc0206ad0c879
+  tag: sha-9e5119a8e547775b79690f1f218eb7ed784f637e
   port: 8080
 port: 8080
