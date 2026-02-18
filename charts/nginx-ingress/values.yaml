@@ -1,6 +1,5 @@
 ingress-nginx:
   controller:
     service:
-      type: NodePort
-    hostPort:
-      enabled: true 
+      type: ClusterIP
+  hostNetwork: true
