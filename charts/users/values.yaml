@@ -1,6 +1,6 @@
 replicasCount: 1
 container:
   image: timotheeren/users
-  tag: sha-06f493151c5dfd8f462853970f5fab20e5908c78
+  tag: sha-b67ebb5d9c260e990f87743bfaa3e524a8eae46a
   port: 8080
 port: 8080
